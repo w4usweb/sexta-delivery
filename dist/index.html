@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sexta Delivery | Combos, pizzas e burgers</title>
+  <meta name="description" content="Todo dia merece um Sexta. Combos para dividir, pizzas, burgers e porções em Pato Branco, Dois Vizinhos e São Lourenço do Oeste.">
+  <meta name="theme-color" content="#171716"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/familia.jpg"><link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#cardapio">Ir para o cardápio</a>
+<div class="topline">A FOME É SUA. O CAPRICHO É NOSSO. <span>3 cidades. Um só Sexta.</span></div>
+<header class="header"><div class="wrap header-inner">
+  <a class="brand" href="#inicio" aria-label="Sexta Delivery, início"><span class="brand-name">sexta<span class="brand-dot">✳</span></span><span class="brand-sub">D E L I V E R Y</span></a>
+  <button class="location" data-city-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Seu Sexta está em</small><strong id="city-label">Escolha sua cidade</strong></span><span class="chevron">⌄</span></button>
+  <nav class="desktop-nav" aria-label="Principal"><a href="#combos">Combos</a><a href="#cardapio">Cardápio</a><a href="#unidades">Nossas lojas</a></nav>
+  <button class="bag-button" id="bag-open" aria-label="Abrir minha sacola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="bag-word">Meu pedido</span><b id="bag-count">0</b></button>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-layout">
+  <div class="hero-copy"><div class="eyebrow"><span class="tiny-star">✳</span> O COMBO QUE JUNTA TODO MUNDO</div>
+  <h1>Fome de<br>coisa <em>boa.</em></h1><p>Pizza, smash e aquela porção caprichada.<br>O seu momento Sexta começa aqui.</p>
+  <div class="hero-offer"><div><span>COMBO FAMÍLIA · SERVE 4</span><div class="hero-price"><small>a partir de</small><strong>R$ 99<sup>,90</sup></strong></div></div><span class="price-divider"></span><p>Pizza + 4 smash<br>3 porções + refri 2L</p></div>
+  <div class="hero-actions"><button class="btn yellow" data-product="familia">Quero esse combo <span>↗</span></button><a class="text-link light" href="#cardapio">Ver cardápio <span>↓</span></a></div>
+  <div class="hero-note"><span>↗</span> Peça direto com a unidade da sua cidade.</div>
+  </div>
+  <div class="hero-visual"><img src="assets/familia.jpg" alt="Conceito ilustrativo do Combo Família com pizza, quatro burgers, porções e refrigerante" width="1536" height="1024" fetchpriority="high"><div class="hero-stamp">DÁ MATCH<br>COM A<br><strong>SUA FOME.</strong><span>✳</span></div><button class="photo-open" data-product="familia">↗ Ver o combo de perto</button><span class="image-disclaimer">Fotografia ilustrativa criada com IA</span></div>
+</div><div class="hero-bottom wrap"><span>COMIDA BOA. SEM COMPLICAÇÃO.</span><span>Pizza <b>✳</b> Burgers <b>✳</b> Porções <b>✳</b> Combos</span><a href="#combos" aria-label="Explorar combos">↓</a></div></section>
+
+<section id="combos" class="section wrap reveal"><div class="section-head"><div><div class="eyebrow">JUNTOS, FICA AINDA MELHOR</div><h2>Qual é o seu <em>combo?</em></h2></div><span class="section-aside">Mais sabor na mesa.<br>Menos dúvida na hora de pedir.</span></div>
+<div class="combo-grid">
+ <button class="combo-card featured" data-product="familia"><div class="card-photo"><img src="assets/familia.jpg" alt="Combo Família ilustrativo" width="1536" height="1024" loading="lazy"><span class="pill yellow-pill">O favorito no Brendi</span><span class="people">PARA 4 PESSOAS</span></div><div class="card-body"><div class="card-title"><h3>Combo Família</h3><span class="round-arrow">↗</span></div><p>1 pizza 30 cm, 4 smash bacon, batata, frango, onion rings e refri 2L.</p><div class="card-bottom"><span>A partir de <strong>R$ 99,90</strong></span><span class="micro-link">Montar meu combo</span></div></div></button>
+ <button class="combo-card" data-product="casal"><div class="card-photo"><img src="assets/casal.jpg" alt="Combo Casal ilustrativo" width="1536" height="1024" loading="lazy"><span class="pill white-pill">A noite de vocês</span><span class="people">PARA 2 PESSOAS</span></div><div class="card-body"><div class="card-title"><h3>Combo Casal</h3><span class="round-arrow">↗</span></div><p>1 pizza 30 cm com até 2 sabores, 2 smash bacon e refrigerante Kuat 2L.</p><div class="card-bottom"><span>A partir de <strong>R$ 70,00</strong></span><span class="micro-link">Montar meu combo</span></div></div></button>
+</div><p class="caption">Imagens ilustrativas. Confira sabores, disponibilidade e valor final com a unidade.</p></section>
+
+<section class="menu-section" id="cardapio"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">ESCOLHA PELO QUE DEU VONTADE</div><h2>Hoje vai de <em>quê?</em></h2></div><label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Busque seu favorito" aria-label="Buscar no cardápio"></label></div>
+<div class="category-bar" role="group" aria-label="Categorias do cardápio"><button data-category="todos" class="active" aria-pressed="true">Todos</button><button data-category="pizzas" aria-pressed="false">Pizzas</button><button data-category="burgers" aria-pressed="false">Burgers</button><button data-category="porcoes" aria-pressed="false">Porções</button><button data-category="bebidas" aria-pressed="false">Bebidas</button></div>
+<div id="product-grid" class="product-grid"></div><details id="more-menu" class="more-menu"><summary>Mais opções no cardápio <span id="more-count"></span></summary><div id="extra-products" class="extra-products"></div></details><p id="empty-search" class="empty hidden" role="status">Esse sabor ainda não apareceu por aqui. Tente “burger”, “batata” ou “pizza”.</p>
+<div class="menu-footer"><p>Tem uma dúvida ou quer personalizar?<br><strong>A gente te ajuda a escolher.</strong></p><button class="btn outline" id="contact-store">Falar com minha unidade <span>↗</span></button></div>
+</div></section>
+
+<section class="human-section wrap reveal"><div class="human-photo"><img src="assets/entregador.jpg" alt="Cena ilustrativa de entregador Sexta sorrindo com embalagens de delivery" width="1536" height="1024" loading="lazy"><span>GENTE QUE LEVA COISA BOA.</span></div><div class="human-copy"><div class="eyebrow">DA NOSSA COZINHA PRO SEU MOMENTO</div><h2>Seu pedido.<br>Nosso <em>capricho.</em></h2><p>Tem dia de reunir a turma. Tem dia de ficar no sofá. E tem Sexta para acompanhar cada um deles.</p><ol class="steps"><li><span>01</span><div><strong>Escolha sua cidade</strong><p>Seu pedido vai para a unidade certa.</p></div></li><li><span>02</span><div><strong>Monte seu momento</strong><p>Escolha o combo e conte suas preferências.</p></div></li><li><span>03</span><div><strong>Combine a entrega</strong><p>Confirme endereço, prazo e pagamento com a loja.</p></div></li></ol><button class="text-link" data-city-open>Encontrar meu Sexta <span>↗</span></button></div></section>
+
+<section id="unidades" class="stores-section"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">PERTINHO DE VOCÊ</div><h2>Três cidades.<br>O mesmo <em>capricho.</em></h2></div><p class="section-aside">A história começou no pub.<br>E ganhou o caminho da sua casa.</p></div><div class="store-grid" id="store-grid"></div><div class="pub-strip"><div><span class="pub-mark">sexta<span>BEER PUB</span></span><p>Prefere viver o Sexta de perto?<br><strong>Conheça o pub em Pato Branco.</strong></p></div><a href="https://www.instagram.com/sextabeer.pb/" target="_blank" rel="noopener noreferrer">Ver programação no Instagram ↗</a></div></div></section>
+
+<section class="franchise wrap reveal"><span class="big-star" aria-hidden="true">✳</span><div><div class="eyebrow">O PRÓXIMO SEXTA PODE SER NA SUA CIDADE</div><h2>Vamos crescer <em>juntos?</em></h2><p>Tem interesse em levar o Sexta Delivery ou Sexta Beer Pub para sua região? Conheça a proposta de expansão.</p></div><button class="btn dark" id="franchise-open">Quero conversar <span>↗</span></button></section>
+
+<section class="faq wrap reveal"><h2>Antes de <em>pedir.</em></h2><div><details><summary>Como funciona o pedido?</summary><p>Escolha sua cidade, adicione os itens à lista e abra o resumo no WhatsApp. O pedido só é confirmado pela loja após conferir disponibilidade, endereço, entrega e pagamento. Em Pato Branco, você também pode usar o Brendi.</p></details><details><summary>Qual é o prazo e a taxa de entrega?</summary><p>Dependem do endereço, da unidade e do movimento. Consulte os valores e a previsão no atendimento antes de confirmar seu pedido.</p></details><details><summary>Posso escolher os sabores da pizza?</summary><p>Os combos Família e Casal incluem pizza de 30 cm com até dois sabores. Informe sua preferência nas observações e confirme as opções disponíveis com a loja.</p></details><details><summary>Tenho uma restrição alimentar. Como aviso?</summary><p>Fale com a unidade antes de pedir para confirmar ingredientes e condições de preparo. As fotos são ilustrativas e não substituem as informações de ingredientes.</p></details></div></section>
+</main>
+<footer><div class="wrap footer-top"><a class="brand" href="#inicio"><span class="brand-name">sexta<span class="brand-dot">✳</span></span><span class="brand-sub">D E L I V E R Y</span></a><p>Todo dia merece<br><strong>um momento Sexta.</strong></p><a href="#cardapio">Escolher meu pedido ↑</a></div><div class="wrap footer-bottom"><span>© 2026 Sexta Delivery · Sexta Beer Pub</span><span>Conceito de redesign · Fotos de alimentos e entregador geradas com IA.</span><button id="privacy-open">Privacidade</button></div></footer>
+<button class="mobile-bag hidden" id="mobile-bag"><span>Minha lista <b id="mobile-count">0</b></span><span id="mobile-total"></span><span>Ver pedido →</span></button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<dialog id="city-dialog" aria-labelledby="city-title" class="city-dialog"><button class="close" data-close aria-label="Fechar seleção de cidade">×</button><div class="city-intro"><span class="brand-name">sexta<span class="brand-dot">✳</span></span><div class="eyebrow">BORA PEDIR COISA BOA?</div><h2 id="city-title">Onde é o seu<br><em>momento Sexta?</em></h2><p>Escolha sua cidade para falar com a loja certa.</p></div><div class="city-options" id="city-options"></div><p class="city-help">Sua escolha fica salva neste dispositivo.<br><button id="explore-first">Só quero dar uma olhada →</button></p></dialog>
+<dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title"><button class="close" data-close aria-label="Fechar produto">×</button><div id="product-detail"></div></dialog>
+<dialog id="bag-dialog" class="bag-dialog" aria-labelledby="bag-title"><button class="close" data-close aria-label="Fechar pedido">×</button><div class="eyebrow">SEU MOMENTO SEXTA</div><h2 id="bag-title">Tá na <em>lista.</em></h2><button class="bag-city" data-city-open>Unidade: <strong id="bag-city-label">Escolha sua cidade</strong> ⌄</button><div id="bag-items"></div><div id="bag-summary"></div></dialog>
+<dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="close" data-close aria-label="Fechar">×</button><div id="info-content"></div></dialog>
+</body></html>

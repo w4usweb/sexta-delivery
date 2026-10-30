@@ -1,0 +1,16 @@
+# Dependências e builds
+node_modules/
+.vercel/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+*.pem
+*.key
+
+# Configuração da hospedagem anterior (não usada na Vercel)
+.openai/
+
+# Sistema
+.DS_Store
+Thumbs.db
