@@ -29,11 +29,16 @@ Idioma do site e das conversas: português do Brasil.
 - `vercel.json`: `framework: null`, `outputDirectory: "dist"` — sem install e sem build.
 - A pasta `.openai/` (hospedagem anterior) fica fora do Git via `.gitignore`.
 
+## Cardápio
+- Grade principal: itens de `products` sem `compact` (pizza, 6 burgers, batata, refri 2L, água).
+- "Mais opções no cardápio" (`<details id="more-menu">`): itens de `extraMenu` (`compact: true`), em lista.
+  Busca e filtro valem para os dois; a lista some quando não há itens e abre sozinha quando a busca encontra algo.
+- Produto sem foto (`images: []`) mostra ilustração: garrafa para bebidas, "NA CHAPA." para burgers,
+  "PRA DIVIDIR." para porções (`productGraphic` em `app.js`).
+
 ## Problemas conhecidos
-- "Mais opções no cardápio" está incompleto: os 23 itens de `extraMenu` (marcados `compact: true`) aparecem
-  no grid principal com a ilustração de garrafa ("BEM GELADO"), inclusive burgers e porções. O `<details
-  id="more-menu">`, `#extra-products` e `#more-count` existem no HTML mas não são preenchidos pelo JS nem
-  estilizados no CSS.
+- Burgers Salada, Tradicional, Onion Rings, Kids e Combo Individual ainda sem foto; Bacon usa foto gerada com IA.
+  A rede da sessão de nuvem bloqueia bancos de imagem (Unsplash, Pexels etc.).
 - Imagens sem versão otimizada (WebP/tamanhos menores); página carrega ~0,85–1 MB.
 - "Combo Individual" está sem preço (divergência no cardápio de origem).
 
