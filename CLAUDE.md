@@ -47,10 +47,11 @@ Idioma do site e das conversas: português do Brasil.
 - Contraste conferido: todos os textos ≥ 4,5:1 (grandes ≥ 3:1). Foco: contorno escuro no papel, amarelo no escuro.
 
 ## Fotos
-- Fotos reais do Sexta (vindas de `fotos/` do repositório do Pub, uso autorizado): Combo Família
-  (`combo-familia.jpg`), Combo Casal, Combo Individual e Onion Rings Burger (`burger-onion.jpg`).
-  Produtos com foto real têm `real: true` em `app.js` (legenda "Foto real" em vez de "criada com IA").
-- Ainda geradas com IA: pizza, Bacon Burguer (`burger.jpg`), batata e entregador.
+- Foto real do Sexta (vinda de `fotos/` do repositório do Pub, uso autorizado): só o Onion Rings Burger
+  (`burger-onion.jpg`). Produtos com foto real têm `real: true` em `app.js` (legenda "Foto real").
+- Combos Família e Casal usam as imagens originais do Delivery (geradas com IA): o dono preferiu essas às
+  fotos reais do Pub. Não trocar sem pedido. Combo Individual fica com a ilustração "NA CHAPA.".
+- Também geradas com IA: pizza, Bacon Burguer (`burger.jpg`), batata e entregador.
 - Só associar foto a produto quando ela mostrar ESSE produto. `comida4 (porção)` do Pub não foi usada
   (provável tilápia, não confirmado).
 
@@ -62,7 +63,7 @@ Idioma do site e das conversas: português do Brasil.
   "PRA DIVIDIR." para porções (`productGraphic` em `app.js`).
 
 ## Problemas conhecidos
-- Burgers Salada, Tradicional e Kids ainda sem foto (ilustração "NA CHAPA.").
+- Burgers Salada, Tradicional, Kids e Combo Individual sem foto (ilustração "NA CHAPA.").
 - Página inteira ≈ 1 MB (antes 2 MB). Imagens ainda em JPG, não WebP/AVIF (o `app.js` monta `assets/<id>.jpg`).
 - "Combo Individual" está sem preço (divergência no cardápio de origem).
 
