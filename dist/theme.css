@@ -1,0 +1,360 @@
+/*
+ * Sexta Delivery — identidade alinhada ao SextaBeer Pub. Carregado depois de style.css.
+ * Base híbrida: header, hero, unidades e footer no "palco" escuro do Pub; combos, cardápio,
+ * seção humana, expansão, FAQ e diálogos em papel creme (contracapa do Pub) para leitura.
+ * Títulos e preços em Big Shoulders Display, rótulos em Big Shoulders Text, textos em DM Sans.
+ * Nunca usar amarelo como texto sobre o papel (contraste 1,4:1): destaque no papel é contorno escuro.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Big+Shoulders+Text:wght@600;700;800&display=swap');
+
+:root {
+  /* palco (Pub) */
+  --stage: #15100d;
+  --stage-raised: #1e1712;
+  --stage-light: #241a13;
+  --on-dark: #ecddbf;
+  --on-dark-dim: #a8987c;
+  --line-dark: rgb(236 221 191 / 0.16);
+
+  /* papel (contracapa do Pub) */
+  --paper: #ecddbf;
+  --paper-card: #f6eee0;
+  --paper-deep: #e3cfa8;
+  --ink: #1a1310;
+  --muted: #5e4e3b;
+  --line: rgb(26 19 16 / 0.14);
+  --cream: var(--paper-card);
+
+  /* acentos */
+  --yellow: #f4b41a;
+  --yellow-hover: #ffc63a;
+  --orange: #e8741e;
+  --rust: #8a3b14;
+
+  /* tipografia */
+  --display: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif;
+  --label: 'Big Shoulders Text', 'Arial Narrow', sans-serif;
+  --font: 'DM Sans', Arial, sans-serif;
+
+  /* recorte de ingresso dos botões principais (Pub) */
+  --notch: 7px;
+  --ticket: radial-gradient(circle at 0 50%, #0000 var(--notch), #000 calc(var(--notch) + 0.5px)) left / 51% 100% no-repeat,
+    radial-gradient(circle at 100% 50%, #0000 var(--notch), #000 calc(var(--notch) + 0.5px)) right / 51% 100% no-repeat;
+
+  /* grão de impressão */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .93 0 0 0 0 .8 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- base ---------- */
+body { background: var(--paper); color: var(--ink); }
+h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: 0; }
+h2 em { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.eyebrow { font-family: var(--label); font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); }
+.section-aside, .caption { color: var(--muted); }
+.caption { font-size: 12px; }
+:focus-visible, button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, select:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.header :focus-visible, .hero :focus-visible, .stores-section :focus-visible, footer :focus-visible, .detail-gallery :focus-visible { outline-color: var(--yellow); }
+.skip { background: var(--yellow); color: var(--ink); font-family: var(--label); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* palco: superfícies escuras com luz baixa e grão */
+.hero, .stores-section, footer { position: relative; isolation: isolate; color: var(--on-dark); }
+.hero::after, .stores-section::after, footer::after { content: ''; position: absolute; inset: 0; background: var(--grain); opacity: 0.07; pointer-events: none; z-index: 3; }
+.stores-section::after, footer::after { z-index: -1; }
+
+/* ---------- botões ---------- */
+.btn { border-radius: 0; font-family: var(--label); font-size: 14px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.yellow { background: var(--yellow); color: var(--ink); }
+.yellow:hover { background: var(--yellow-hover); }
+.btn.yellow, .btn.dark, .bag-button, .store-card button, .mobile-bag { -webkit-mask: var(--ticket); mask: var(--ticket); }
+.btn.yellow, .btn.dark { padding-inline: 26px; }
+.dark { background: var(--stage); color: var(--on-dark); }
+.dark:hover { background: var(--stage-light); }
+.btn.outline, .outline { border: 1px solid var(--ink); background: none; color: var(--ink); }
+.btn.outline:hover { background: var(--ink); color: var(--paper); }
+.text-link { font-family: var(--label); font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* ---------- faixa superior ---------- */
+.topline { background: var(--yellow); color: var(--ink); font-family: var(--label); font-size: 12px; font-weight: 800; letter-spacing: 0.24em; }
+.topline span { font-weight: 600; letter-spacing: 0.08em; }
+
+/* ---------- marca: lettering "Sexta" do Pub + DELIVERY ---------- */
+.brand { gap: 5px; }
+.brand-name { display: block; width: 104px; height: 50px; font-size: 0; color: transparent; background: url('assets/brand/sexta-lettering-creme.png') left center / contain no-repeat; }
+.brand-dot { display: none; }
+.brand-sub { margin-top: 0; padding-left: 3px; font-family: var(--label); font-size: 11px; font-weight: 700; letter-spacing: 0.42em; color: var(--yellow); }
+.city-intro .brand-name { background-image: url('assets/brand/sexta-lettering-escuro.png'); width: 92px; height: 44px; }
+
+/* ---------- header ---------- */
+.header { background: rgb(21 16 13 / 0.94); color: var(--on-dark); border-bottom: 1px solid var(--line-dark); }
+.location { border-left-color: var(--line-dark); }
+.location small { color: var(--on-dark-dim); font-family: var(--label); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.location strong { font-size: 13px; }
+.location svg { color: var(--yellow); }
+.desktop-nav { font-family: var(--label); font-size: 14px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.desktop-nav a:hover { color: var(--yellow); }
+.bag-button { background: var(--yellow); color: var(--ink); border-radius: 0; padding-inline: 26px; font-family: var(--label); font-size: 14px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.bag-button b { background: var(--ink); color: var(--yellow); font-family: var(--font); }
+
+/* ---------- hero ---------- */
+.hero { background: radial-gradient(ellipse 60% 75% at 72% 42%, #33230f 0%, var(--stage-light) 38%, var(--stage) 74%), var(--stage); }
+.hero .eyebrow { color: var(--orange); }
+.tiny-star { color: var(--yellow); }
+.hero h1 { font-weight: 900; font-size: clamp(84px, 8.6vw, 128px); line-height: 0.86; }
+.hero-copy > p { color: var(--on-dark-dim); }
+.hero-offer > div > span { font-family: var(--label); font-size: 12px; letter-spacing: 0.2em; color: var(--on-dark); }
+.hero-price small { color: var(--on-dark-dim); }
+.hero-price strong { font-weight: 900; font-size: 68px; }
+.price-divider { background: var(--line-dark); }
+.hero-offer > p, .hero-note { color: var(--on-dark-dim); }
+.hero-visual { margin-right: 0; height: 500px; }
+.hero-visual::before { display: none; }
+.hero-visual > img { border-radius: 2px; transform: rotate(2.2deg); box-shadow: 0 30px 60px rgb(0 0 0 / 0.55); outline: 1px solid rgb(236 221 191 / 0.12); }
+.hero-visual:hover > img { transform: rotate(1.4deg) scale(1.01); }
+/* fita adesiva da foto impressa */
+.hero-visual::after, .human-photo::after { content: ''; position: absolute; top: -14px; left: 44%; width: 120px; height: 30px; background: rgb(236 221 191 / 0.55); transform: rotate(-3deg); z-index: 2; box-shadow: 0 2px 6px rgb(0 0 0 / 0.25); }
+.hero-stamp { z-index: 4; background: var(--yellow); color: var(--ink); border-color: var(--stage); top: -24px; right: -18px; font-family: var(--label); font-size: 13px; letter-spacing: 0.06em; }
+.hero-stamp strong { font-family: var(--display); font-weight: 900; font-size: 26px; }
+.photo-open { right: 24px; bottom: 30px; border-radius: 0; font-family: var(--label); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgb(21 16 13 / 0.7); border-color: var(--line-dark); color: var(--on-dark); }
+.image-disclaimer { right: 24px; bottom: -22px; color: var(--on-dark-dim); font-size: 10px; }
+.hero-bottom { border-top-color: var(--line-dark); font-family: var(--label); font-size: 12px; letter-spacing: 0.22em; color: var(--on-dark-dim); }
+.hero-bottom > span:nth-child(2) { font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-dark); }
+
+/* ---------- combos ---------- */
+.combo-card { background: var(--paper-card); border-color: var(--line); border-radius: 2px; }
+.combo-card:hover { box-shadow: 0 14px 34px rgb(26 19 16 / 0.14); }
+.card-photo { background: var(--stage); }
+.pill { border-radius: 0; font-family: var(--label); font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+.yellow-pill { background: var(--yellow); }
+.white-pill { background: var(--paper); }
+.people { border-radius: 0; background: rgb(21 16 13 / 0.82); color: var(--on-dark); font-family: var(--label); font-size: 12px; letter-spacing: 0.16em; }
+.card-title h3 { font-size: 38px; }
+.round-arrow { border-radius: 0; border-color: var(--ink); }
+.card-body > p { font-size: 14px; color: var(--muted); }
+.card-bottom { border-top-color: var(--line); }
+.card-bottom > span { font-size: 12px; color: var(--muted); }
+.card-bottom strong { font-weight: 800; font-size: 30px; }
+.card-bottom .micro-link { font-family: var(--label); font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* ---------- cardápio ---------- */
+.menu-section { background: var(--paper); border-top: 1px solid var(--line); }
+.search { background: var(--paper-card); border-color: var(--line); border-radius: 0; }
+.search input { font-size: 14px; }
+.search input::placeholder { color: var(--muted); }
+.category-bar { background: rgb(236 221 191 / 0.96); }
+.category-bar button { border-radius: 0; border-color: rgb(26 19 16 / 0.3); font-family: var(--label); font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 9px 20px; }
+.category-bar button.active { background: var(--ink); border-color: var(--ink); color: var(--yellow); }
+.product-card { background: var(--paper-card); border-color: var(--line); border-radius: 2px; }
+.product-image { background: var(--stage); }
+.product-info p { font-size: 13px; color: var(--muted); }
+.product-info .price-row { font-weight: 800; font-size: 24px; }
+.product-image .image-label { font-size: 10px; border-radius: 0; background: rgb(21 16 13 / 0.72); }
+.add-circle { background: var(--yellow); color: var(--ink); }
+.graphic-drink { background: var(--yellow); }
+.graphic-food { background: var(--stage); }
+.drink-type { font-weight: 900; }
+.more-menu { background: var(--paper-card); border-color: var(--line); border-radius: 2px; }
+.more-menu summary { font-weight: 800; text-transform: uppercase; }
+.extra-text strong { font-size: 15px; }
+.extra-text small { font-size: 12px; color: var(--muted); }
+.extra-price { font-weight: 800; font-size: 21px; }
+.empty { color: var(--muted); }
+.menu-footer { border-top-color: var(--line); }
+.menu-footer p { color: var(--muted); font-size: 13px; }
+
+/* ---------- seção humana ---------- */
+.human-photo { overflow: visible; border-radius: 0; }
+.human-photo img { border-radius: 2px; transform: rotate(-1.6deg); box-shadow: 0 24px 50px rgb(26 19 16 / 0.28); }
+.human-photo::after { left: 38%; }
+.human-photo > span { border-radius: 0; font-family: var(--label); font-size: 13px; font-weight: 800; letter-spacing: 0.16em; color: var(--ink); -webkit-mask: var(--ticket); mask: var(--ticket); padding-inline: 18px; }
+.human-copy > p { font-size: 15px; color: var(--muted); }
+.steps li { border-bottom-color: var(--line); }
+.steps li > span { font-weight: 900; font-size: 40px; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px var(--ink); min-width: 46px; }
+.steps strong { font-size: 15px; }
+.steps p { font-size: 13px; color: var(--muted); }
+
+/* ---------- unidades (palco) ---------- */
+.stores-section { background: radial-gradient(ellipse 70% 60% at 50% 0%, var(--stage-light), var(--stage) 70%), var(--stage); }
+.stores-section h2 em { -webkit-text-stroke-color: var(--yellow); }
+.stores-section .eyebrow { color: var(--orange); }
+.stores-section .section-aside { color: var(--on-dark-dim); font-size: 14px; }
+.store-card { background: var(--stage-raised); border-color: var(--line-dark); border-radius: 2px; }
+.store-card small { font-family: var(--label); font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: var(--orange); }
+.store-card h3 { font-size: 40px; color: var(--on-dark); }
+.store-card p { font-size: 13px; color: var(--on-dark-dim); }
+.store-card button { border-radius: 0; padding: 13px 22px; color: var(--ink); font-family: var(--label); font-size: 14px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.store-card button:hover { background: var(--yellow-hover); }
+.store-card a { font-size: 13px; color: var(--on-dark-dim); }
+.store-card a:hover { color: var(--yellow); }
+.pub-strip { border-top-color: var(--line-dark); }
+/* selo do Pub: logo real no lugar do texto "sexta / BEER PUB" (o texto segue para leitores de tela) */
+.pub-mark { display: block; width: 92px; height: 80px; font-size: 0; color: transparent; background: url('assets/brand/sextabeer-pub-creme.png') center / contain no-repeat; flex-shrink: 0; }
+.pub-mark > span { font-size: 0; margin: 0; }
+.pub-strip p { font-size: 14px; color: var(--on-dark-dim); }
+.pub-strip strong { color: var(--on-dark); font-weight: 600; }
+.pub-strip a { font-family: var(--label); font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); }
+
+/* ---------- expansão ---------- */
+.franchise { border-bottom-color: var(--line); }
+.big-star { color: var(--rust); }
+.franchise .eyebrow { font-size: 11px; }
+.franchise h2 { font-size: 54px; }
+.franchise p { font-size: 14px; color: var(--muted); }
+
+/* ---------- FAQ ---------- */
+.faq h2 { font-size: 54px; }
+.faq details { border-bottom-color: var(--line); font-size: 14px; }
+.faq summary { font-weight: 700; font-size: 15px; }
+.faq summary::after { font-family: var(--display); font-weight: 900; font-size: 24px; line-height: 1; }
+.faq details p { color: var(--muted); }
+
+/* ---------- footer (palco) ---------- */
+footer { background: var(--stage); border-top: 4px solid var(--yellow); }
+.footer-top p { font-size: 14px; color: var(--on-dark-dim); }
+.footer-top p strong { color: var(--on-dark); }
+.footer-top > a:last-child { font-family: var(--label); font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); }
+.footer-bottom { border-top-color: var(--line-dark); font-size: 12px; color: var(--on-dark-dim); }
+.footer-bottom button { font-size: 12px; color: var(--on-dark-dim); text-decoration: underline; }
+.footer-bottom button:hover { color: var(--yellow); }
+
+/* ---------- barra da sacola (celular) e aviso ---------- */
+.mobile-bag { border-radius: 0; border: 0; box-shadow: none; padding-inline: 22px; font-family: var(--label); font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.mobile-bag b { border-radius: 0; font-family: var(--font); }
+.toast { background: var(--stage); color: var(--on-dark); border-color: var(--line-dark); border-radius: 0; font-size: 14px; }
+
+/* ---------- diálogos (papel) ---------- */
+dialog { background: var(--paper-card); color: var(--ink); border-radius: 4px; box-shadow: 0 30px 100px rgb(0 0 0 / 0.5); }
+dialog::backdrop { background: rgb(21 16 13 / 0.78); }
+.close { background: var(--paper-card); border-color: var(--line); color: var(--ink); }
+.close:hover { background: var(--yellow); border-color: var(--yellow); }
+.city-intro h2 { font-size: 56px; }
+.city-intro > p { font-size: 14px; color: var(--muted); }
+.city-option { background: var(--paper); border-color: var(--line); border-radius: 2px; }
+.city-option:hover { background: var(--yellow); border-color: var(--yellow); }
+.city-option strong { font-family: var(--display); font-weight: 800; font-size: 24px; text-transform: uppercase; }
+.city-option small { font-size: 12px; color: var(--muted); }
+.city-help { font-size: 12px; color: var(--muted); }
+.city-help button { font-size: 13px; }
+.detail-gallery { background: var(--stage); }
+.detail-gallery p { color: var(--on-dark-dim); font-size: 12px; }
+.thumbs button { border-radius: 0; }
+.detail-content h2 { font-size: 52px; }
+.detail-content .description { font-size: 14px; color: var(--muted); }
+.includes { font-size: 14px; }
+.includes li::before { color: var(--rust); }
+.detail-content > strong { font-family: var(--display); font-weight: 800; font-size: 30px; }
+.field-label { font-size: 13px; }
+.detail-content textarea, .franchise-form input, .franchise-form select { background: #fffaf0; border-color: rgb(26 19 16 / 0.24); border-radius: 0; font-size: 14px; }
+.quantity { border-color: rgb(26 19 16 / 0.24); border-radius: 0; }
+.quantity output { font-size: 15px; font-weight: 700; }
+.detail-content .fine-print { font-size: 12px; color: var(--muted); }
+.bag-dialog h2, .info-dialog h2 { font-size: 56px; }
+.bag-city { background: var(--paper-deep); border-radius: 0; font-size: 13px; }
+.bag-item { border-bottom-color: var(--line); }
+.bag-item img { border-radius: 2px; }
+.bag-item strong { font-size: 15px; }
+.bag-item p { font-size: 12px; color: var(--muted); }
+.bag-item-actions button { background: var(--paper-deep); border-radius: 0; }
+.bag-item .remove-item { font-size: 12px; background: none; }
+.bag-item-price { font-family: var(--display); font-weight: 800; font-size: 20px; }
+.summary-row { font-size: 16px; }
+.summary-row span:last-child { font-family: var(--display); font-weight: 800; font-size: 24px; }
+.summary-notice { font-size: 12px; color: var(--muted); }
+.bag-secondary { font-size: 13px; }
+.empty-bag { font-size: 14px; color: var(--muted); }
+.info-dialog p { font-size: 14px; color: var(--muted); }
+.franchise-form label { font-size: 13px; }
+.franchise-form .consent { font-size: 13px; }
+.franchise-form .consent input { accent-color: var(--ink); }
+
+/* ---------- telas médias ---------- */
+.hero-price, .btn, .text-link, .location small { white-space: nowrap; }
+@media (max-width: 1100px) {
+  .hero h1 { font-size: 84px; }
+  .hero-price strong { font-size: 54px; }
+  .hero-visual { height: 420px; }
+  .hero-stamp { right: 4px; font-size: 11px; }
+  .hero-stamp strong { font-size: 20px; }
+  .hero-actions { gap: 18px; }
+  .btn { letter-spacing: 0.08em; gap: 16px; }
+  .btn.yellow, .btn.dark { padding-inline: 20px; }
+  .text-link { letter-spacing: 0.08em; gap: 10px; }
+  .desktop-nav { font-size: 13px; letter-spacing: 0.08em; }
+  .location small { letter-spacing: 0.06em; }
+}
+
+/* ---------- celular ---------- */
+@media (max-width: 760px) {
+  .topline { font-size: 10px; letter-spacing: 0.18em; }
+  .brand-name { width: 80px; height: 38px; }
+  .brand-sub { font-size: 9px; letter-spacing: 0.36em; }
+  .location small { font-size: 9px; }
+  .location strong { font-size: 12px; }
+  .bag-button { padding-inline: 18px; }
+  .hero .eyebrow { font-size: 11px; letter-spacing: 0.16em; }
+  .hero h1 { font-size: 84px; line-height: 0.86; }
+  .hero-copy > p { font-size: 14px; }
+  .hero-offer > div > span { font-size: 11px; }
+  .hero-price strong { font-size: 56px; }
+  .hero-offer > p { font-size: 12px; }
+  .btn { font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; gap: 16px; }
+  .btn.yellow, .btn.dark { padding-inline: 20px; }
+  .hero-actions { gap: 18px; }
+  .text-link { font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; gap: 10px; }
+  .hero-note { font-size: 11px; }
+  .hero-visual { height: 300px; margin: 28px 6px 0; }
+  .hero-visual > img { transform: rotate(1.6deg); }
+  .hero-visual::after, .human-photo::after { width: 90px; height: 24px; top: -10px; left: 38%; }
+  .hero-stamp { top: -20px; right: -4px; }
+  .hero-stamp { font-size: 9px; }
+  .hero-stamp strong { font-size: 17px; }
+  .photo-open { right: 16px; bottom: 18px; font-size: 11px; }
+  .image-disclaimer { right: 10px; bottom: -20px; font-size: 9px; }
+  .hero-bottom { margin-top: 18px; }
+  .hero-bottom > span:nth-child(2) { font-size: 15px; }
+  .eyebrow { font-size: 10px; letter-spacing: 0.18em; }
+  .caption { font-size: 11px; }
+  .pill, .people { font-size: 11px; }
+  .card-title h3 { font-size: 32px; }
+  .card-body > p { font-size: 13px; }
+  .card-bottom strong { font-size: 26px; }
+  .card-bottom .micro-link { font-size: 12px; }
+  .category-bar button { font-size: 13px; padding: 8px 15px; }
+  .product-info p { font-size: 12px; }
+  .product-info .price-row { font-size: 20px; }
+  .product-image .image-label { font-size: 9px; }
+  .human-photo { margin: 10px 6px 0; }
+  .human-copy > p { font-size: 14px; }
+  .steps li > span { font-size: 34px; }
+  .store-card h3 { font-size: 36px; }
+  .store-card p { font-size: 13px; }
+  .pub-strip p { font-size: 13px; }
+  .pub-strip > a { font-size: 13px; }
+  .franchise h2 { font-size: 44px; }
+  .franchise p { font-size: 13px; }
+  .faq h2 { font-size: 44px; }
+  .faq details { font-size: 13px; }
+  .faq summary { font-size: 14px; }
+  .footer-top p { font-size: 13px; }
+  .footer-bottom, .footer-bottom button { font-size: 11px; }
+  .mobile-bag { font-size: 13px; padding-inline: 20px; }
+  .toast { font-size: 13px; }
+  .city-intro h2 { font-size: 46px; }
+  .city-intro > p { font-size: 13px; }
+  .city-option strong { font-size: 21px; }
+  .detail-content h2 { font-size: 42px; }
+  .detail-content .description, .includes { font-size: 13px; }
+  .detail-footer { background: var(--paper-card); }
+  .detail-footer .btn { font-size: 12px; letter-spacing: 0.06em; }
+  .detail-content .fine-print { font-size: 11px; }
+  .bag-dialog h2, .info-dialog h2 { font-size: 46px; }
+  .bag-item strong { font-size: 14px; }
+  .bag-item-price { font-size: 18px; }
+}
+
+/* ---------- celular estreito ---------- */
+@media (max-width: 400px) {
+  .hero h1 { font-size: 76px; }
+  .hero-offer { gap: 14px; }
+  .hero-price strong { font-size: 46px; }
+  .hero-price sup { font-size: 24px; }
+}
